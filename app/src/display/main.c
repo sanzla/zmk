@@ -108,6 +108,7 @@ void initialize_display(struct k_work *work) {
     }
 
     lv_scr_load(screen);
+    screen->driver->rotated = 1;
 
     start_display_updates();
 }
