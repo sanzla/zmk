@@ -47,7 +47,8 @@ int zmk_widget_peripheral_status_init(struct zmk_widget_peripheral_status *widge
                                       lv_obj_t *parent) {
     widget->obj = lv_label_create(parent, NULL);
 
-    lv_obj_set_size(widget->obj, 20, 8);
+    lv_obj_set_size(widget->obj, 10, 4);
+    lv_obj_set_style_transform_angle(widget->obj, 900, 0);
 
     sys_slist_append(&widgets, &widget->node);
 
