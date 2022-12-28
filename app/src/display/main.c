@@ -101,6 +101,7 @@ void initialize_display(struct k_work *work) {
     initialized = true;
 
     screen = zmk_display_status_screen();
+    screen.driver->rotated = 1;
 
     if (screen == NULL) {
         LOG_ERR("No status screen provided");
@@ -108,7 +109,6 @@ void initialize_display(struct k_work *work) {
     }
 
     lv_scr_load(screen);
-    screen->driver->rotated = 1;
 
     start_display_updates();
 }
