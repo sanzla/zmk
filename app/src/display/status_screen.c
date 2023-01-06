@@ -63,7 +63,7 @@ lv_obj_t *zmk_display_status_screen() {
                                      LV_LABEL_PART_MAIN, LV_STATE_DEFAULT,
                                      lv_theme_get_font_small());
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), NULL, LV_ALIGN_IN_BOTTOM_LEFT,
-                 -15, -15);
+                 15, -15);
 #endif
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
