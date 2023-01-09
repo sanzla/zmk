@@ -38,7 +38,7 @@ void set_mods_symbol(lv_obj_t *label, struct mods_status_state state) {
         strcat(text, "G");
 
     lv_label_set_text(label, text);
-    lv_obj_align(label, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 0, 0);
+    lv_obj_align(label, NULL, LV_ALIGN_IN_BOTTOM_LEFT, 10, -10);
 }
 
 void mods_status_update_cb(struct mods_status_state state) {

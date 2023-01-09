@@ -81,8 +81,8 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_set_style_local_text_font(zmk_widget_mods_status_obj(&mods_status_widget),
                                      LV_LABEL_PART_MAIN, LV_STATE_DEFAULT,
                                      lv_theme_get_font_small());
-    lv_obj_align(zmk_widget_mods_status_obj(&mods_status_widget), NULL, LV_ALIGN_IN_BOTTOM_LEFT, 0,
-                 10);
+    lv_obj_align(zmk_widget_mods_status_obj(&mods_status_widget), NULL, LV_ALIGN_IN_BOTTOM_LEFT, 10,
+                 -10);
 #endif
     return screen;
 }
