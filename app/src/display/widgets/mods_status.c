@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 The ZMK Contributors
+ * Copyright (c) 2022 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -48,7 +48,7 @@ void mods_status_update_cb(struct mods_status_state state) {
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_mods_status, struct mods_status_state, mods_status_update_cb,
                             mods_status_get_state)
-ZMK_SUBSCRIPTION(widget_mods_status, zmk_mods_state_changed);
+ZMK_SUBSCRIPTION(widget_mods_status, zmk_keycode_state_changed);
 
 int zmk_widget_mods_status_init(struct zmk_widget_mods_status *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent, NULL);

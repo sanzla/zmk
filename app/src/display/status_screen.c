@@ -43,7 +43,6 @@ lv_obj_t *zmk_display_status_screen() {
     lv_obj_t *screen;
     screen = lv_obj_create(NULL, NULL);
 
-
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS)
     zmk_widget_battery_status_init(&battery_status_widget, screen);
     lv_obj_align(zmk_widget_battery_status_obj(&battery_status_widget), NULL, LV_ALIGN_IN_TOP_RIGHT,
@@ -79,9 +78,11 @@ lv_obj_t *zmk_display_status_screen() {
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_MODS_STATUS)
     zmk_widget_mods_status_init(&mods_status_widget, screen);
+    lv_obj_set_style_local_text_font(zmk_widget_mods_status_obj(&mods_status_widget),
+                                     LV_LABEL_PART_MAIN, LV_STATE_DEFAULT,
+                                     lv_theme_get_font_small());
     lv_obj_align(zmk_widget_mods_status_obj(&mods_status_widget), NULL, LV_ALIGN_IN_BOTTOM_LEFT, 0,
-                 0);
+                 10);
 #endif
-
     return screen;
 }
