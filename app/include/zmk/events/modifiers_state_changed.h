@@ -15,4 +15,4 @@ struct zmk_modifiers_state_changed {
     bool state;
 };
 
-ZMK_EVENT_DECLARE(zmk_modifiers_state_changed);/*
+ZMK_EVENT_DECLARE(zmk_modifiers_state_changed);
