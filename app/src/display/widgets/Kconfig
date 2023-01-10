@@ -42,6 +42,7 @@ config ZMK_WIDGET_WPM_STATUS
 
 config ZMK_WIDGET_MODS_STATUS
     bool "Widget for displaying active modifers"
+    default y
     select LVGL_USE_LABEL
 
 endmenu
