@@ -42,7 +42,8 @@ config ZMK_WIDGET_WPM_STATUS
 
 config ZMK_WIDGET_MODS_STATUS
     bool "Widget for displaying active modifers"
-    depends on !ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL
+    depends on BT
+    default y if BT
     select LVGL_USE_LABEL
 
 endmenu
