@@ -34,13 +34,15 @@ static void set_battery_symbol(lv_obj_t *label, struct battery_status_state stat
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
     if (state.usb_present) {
         strcpy(text, LV_SYMBOL_CHARGE " ");
-    }
+    }   
 #endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
 
-#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE)
-    char perc[5] = {};
-    snprintf(perc, sizeof(perc), "%3u%%", level);
-    strcat(text, perc);
+#if IS_ENABLED(CONFIG_ZMK_WIDGET_BATTERY_STATUS_SHOW_PERCENTAGE) 
+    if (state.usb_present == false) {
+        char perc[5] = {};
+        snprintf(perc, sizeof(perc), "%3u%%", level);
+        strcat(text, perc);
+    }
 #else
     if (level > 95) {
         strcat(text, LV_SYMBOL_BATTERY_FULL);
