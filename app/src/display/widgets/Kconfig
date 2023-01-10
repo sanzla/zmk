@@ -5,7 +5,8 @@ menu "ZMK Display Widgets"
 
 config ZMK_WIDGET_LAYER_STATUS
     bool "Widget for highest, active layer using small icons"
-    default y
+    depends on BT
+    default y if BT
     select LVGL_USE_LABEL
 
 config ZMK_WIDGET_BATTERY_STATUS
@@ -41,7 +42,8 @@ config ZMK_WIDGET_WPM_STATUS
 
 config ZMK_WIDGET_MODS_STATUS
     bool "Widget for displaying active modifers"
-    default y
+    depends on BT
+    default y if BT
     select LVGL_USE_LABEL
     select ZMK_WPM
 
